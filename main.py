@@ -17,4 +17,4 @@ if __name__ == "__main__":
         f.write(f"Sorgu: {query}\n\n")
         f.write(result.content)
 
-    print(f"\n📝 Arxiv özetleri {filename} dosyasına kaydedildi!")
+    print(f"\n Arxiv özetleri {filename} dosyasına kaydedildi!")
