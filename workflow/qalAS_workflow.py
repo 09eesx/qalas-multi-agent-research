@@ -60,8 +60,8 @@ def choose_sources(query: str) -> dict:
 def source_selector(step_input: StepInput) -> StepOutput:
     query = step_input.input or step_input.previous_step_content or ""
     selection = choose_sources(query)
-    print(f"[Router] Selected sources for '{query}': {selection}")  # ✅ Debug çıktısını buradan al
-    return StepOutput(content=json.dumps(selection, ensure_ascii=False))  # ✅ log parametresini kaldır
+    print(f"[Router] Selected sources for '{query}': {selection}")  
+    return StepOutput(content=json.dumps(selection, ensure_ascii=False))  
 
 
 def _read_selector(step_input: StepInput):
@@ -114,7 +114,7 @@ def qalas_research_workflow(query: str) -> Workflow:
     step_pubmed = Step(name="pubmed_search", agent=qalas_pub_agent)
     step_arxiv = Step(name="arxiv_search", agent=arxiv_agent)
 
-    # 🧩 Yeni adım: sonuçları birleştirip analiz eden agent
+
     def merge_and_analyze(step_input: StepInput) -> StepOutput:
         pubmed_out = step_input.get_step_output("pubmed_search")
         arxiv_out = step_input.get_step_output("arxiv_search")
