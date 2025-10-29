@@ -1,0 +1,65 @@
+Aşağıda ArXiv aramasıyla bulunan ve 3D‑QALAS / ilgili hızlandırma‑rekonstrüksiyon çalışmalarıyla doğrudan ilişkili önemli preprintlerin her biri için Türkçe, kısa ve hedefe odaklı özetler (Amaç / Yöntem / Bulgular / Kısıtlılıklar) verilmiştir. Özetler arXiv abstract/meta‑veri bilgilerine dayanmaktadır; isterseniz tam metinleri indirip daha ayrıntılı özet/tablolar hazırlayabilirim.
+
+---
+
+## Zero-DeepSub: Zero‑Shot Deep Subspace Reconstruction for Rapid Multiparametric Quantitative MRI Using 3D‑QALAS  
+(arXiv:2307.01410v2; DOI: 10.1002/mrm.30018)
+
+- Amaç
+  - 3D‑QALAS zaman serilerini düşük‑rank/altuzay (subspace) tabanlı yöntemle hızla ve yüksek doğrulukla yeniden yapılandırmak; scan‑özgü derin‑öğrenme gerektirmeden (zero‑shot) yüksek hızlandırma faktörlerinde (→ up to 9×) güvenilir T1/T2/PD haritaları üretmek.
+- Yöntem
+  - 3D‑QALAS verisini altuzay modeline sokup subspace QALAS rekonstrüksiyonu uygulandı; bunu scan‑özgü DL ile birleştirerek Zero‑DeepSub yaklaşımı geliştirildi. ISMRM/NIST phantom ve in‑vivo insan verileriyle karşılaştırmalar yapıldı.
+- Bulgular
+  - Phantom: altuzay yaklaşımı referans yöntemlerle iyi doğrusal uyum gösterdi; özellikle T2 için bias azaldı ve hassasiyet arttı.
+  - İn‑vivo: artefakt, gürültü ve voxel bulanıklığında azalma; 9× hızlandırmada bile yüksek kalite korunarak 1 mm izotropik tüm‑beyin T1/T2/PD haritaları ≈2 dakikada elde edilebildi.
+- Kısıtlılıklar
+  - Çalışma preprint düzeyinde; genelleştirilebilirlik (farklı scanner/coil/patoloji) sınırlı test edilmiş. Altuzay/DL kombinasyonunun parametre duyarlılığı ve klinik patoloji durumlarındaki davranışı daha geniş validasyon gerektirir.
+
+---
+
+## SSL‑QALAS: Self‑Supervised Learning for Rapid Multiparameter Estimation in Quantitative MRI Using 3D‑QALAS  
+(arXiv:2302.14240v2; DOI: 10.1002/mrm.29786)
+
+- Amaç
+  - 3D‑QALAS verisinden dış sözlük (dictionary) veya etiketli eğitim verisi olmadan, self‑supervised öğrenme ile hızlı (saniyeler içi çıkarım / dakika düzeyinde ince ayar) multiparametrik (T1, T2, PD, IE) haritalar üretmek.
+- Yöntem
+  - SSL tabanlı model (SSL‑QALAS) geliştirildi; ISMRM/NIST phantom referanslarıyla kıyaslandı ve in‑vivo verilerde dictionary‑matching ile karşılaştırıldı. Modelin önceden eğitilmiş ve scan‑özgü ince ayarlı versiyonları test edildi.
+- Bulgular
+  - Phantom: SSL ve dictionary‑matching yöntemleri referansla güçlü lineer uyum gösterdi.
+  - İn‑vivo: SSL‑QALAS, dictionary‑matching ile benzer performans sağladı; önceden eğitilmiş model ile ~10 s içinde çıkarım; kısa (≈15 dk) scan‑özgü ince ayar gösterildi.
+- Kısıtlılıklar
+  - SSL yöntemlerinin farklı scanner/parametre/patoloji koşullarına genellemesi veri çeşitliliğine bağlı. Preprint abstract’ı bazı nüans (ör. belirsizlik tahmini, sistematik bias analizleri) hakkında sınırlı detay veriyor.
+
+---
+
+## Time‑efficient, High Resolution 3T Whole Brain Quantitative Relaxometry using 3D‑QALAS with Wave‑CAIPI Readouts  
+(arXiv:2211.04426v2)
+
+- Amaç
+  - 3D‑QALAS akuisisyonunu wave‑CAIPI okuma stratejisiyle birleştirerek tüm‑beyin, yüksek çözünürlüklü (≈1.15 mm3) T1/T2/PD haritalarını çok daha kısa sürede (ör. ≈3 dakika) elde etmek.
+- Yöntem
+  - 3D‑QALAS içine wave‑CAIPI readout entegre edildi (R≈3×2 türü hızlandırma); sözlük‑tabanlı parametre eşleştirme ile haritalar üretildi. ISMRM/NIST phantom ve 10 sağlıklı gönüllüde karşılaştırma yapıldı.
+- Bulgular
+  - Phantom ve gönüllü verilerinde, wave‑CAIPI hızlandırılmış protokol ile standart (daha yavaş) 3D‑QALAS protokolleri arasında iyi uyum bulundu. Tüm‑beyin kvantifikasyonun 3 dakikada mümkün olduğu gösterildi.
+- Kısıtlılıklar
+  - Küçük gönüllü sayısı (n=10); klinik patoloji veri setlerinde validasyon eksik. Wave‑CAIPI’nin g‑factor / SNR trade‑off’u bazı anatomik bölgelerde performansı etkileyebilir.
+
+---
+
+## Wave‑Encoded Model‑based Deep Learning (Wave‑MoDL) for Highly Accelerated Imaging (applied to 3D‑QALAS)  
+(arXiv:2202.02814v1)
+
+- Amaç
+  - Wave‑CAIPI (wave‑encoding) ile model‑based deep learning (MoDL) birleşimini kullanarak çok yüksek hızlandırma ile güvenilir 3D görüntüleme ve çok‑kontrastlı ortak rekonstrüksiyon; 3D‑QALAS için de kısa süreli kvantifikasyon hedefi.
+- Yöntem
+  - Wave‑MoDL: fizik tabanlı veri tutarlılığı (forward model) ile unrolled CNN tabanlı düzenlileştiricilerin entegre edildiği bir mimari. Çok‑kontrastlı verilerde ortak rekonstrüksiyon yetenekleri gösterildi; örnek hızlandırmalar raporlandı.
+- Bulgular
+  - Yöntemle demo düzeyinde yüksek hızlandırmalar (ör. MPRAGE için 47 s @1 mm, 16×; 3D‑QALAS için ≈2 dk @1 mm, 12× gibi) elde edilebileceği gösterildi; model‑tenantlı DL ile veri tutarlılığı korunuyor.
+- Kısıtlılıklar
+  - DL tabanlı unrolled rekonstrüksiyonların eğitim verisine bağımlılığı, hiperparametre hassasiyeti ve farklı coil/scanner konfigürasyonlarında genelleme endişeleri var. Gösterimler çoğu zaman demo/arka‑uç (proof‑of‑concept) seviyesinde; geniş klinik validasyon gerek.
+
+---
+
+Kısa notlar / öneriler
+- Yukarıdaki özetler arXiv abstract/meta‑veri kaynaklıdır; tam metin incelemesi daha fazla nicel detay, istatistik ve kısıtlama tespiti sağlayacaktır.  
+- İsterseniz benzer biçimde arXiv sonuç listesindeki diğer preprintleri (ör. MIMOSA, Omni‑QALAS gibi daha yeni/ilerletilmiş sekans önerilerini) de özetleyebilirim veya bu dört makalenin tam metinlerini indirip (read_arxiv_papers ile) daha ayrıntılı metod‑parametre, nicel karşılaştırma tabloları ve sınırlama analizleri hazırlayabilirim. Hangi seçeneği istersiniz?
